@@ -135,20 +135,20 @@ ollod tx staking create-validator \
       --identity="<KEYBASE ID>" \
       -y
 ```
-## If u need change default ports u can change this strings for what u need 
-### config.toml
-### string 15: proxy_app = "tcp://127.0.0.1:26658"
-### string 91: laddr = "tcp://127.0.0.1:26657"
-### string 167: pprof_laddr = "localhost:6060"
-### string 175: laddr = "tcp://0.0.0.0:26656"
-### string 392: prometheus_listen_addr = ":26660"
-### app.toml
-### string 165: address = "0.0.0.0:9090"
-### string 178: address = "0.0.0.0:9091"
-### client.toml
-### string 15: node = "tcp://localhost:26657"
+### If u need change default ports u can change this strings for what u need 
+#### config.toml
+#### string 15: proxy_app = "tcp://127.0.0.1:26658"
+#### string 91: laddr = "tcp://127.0.0.1:26657"
+#### string 167: pprof_laddr = "localhost:6060"
+#### string 175: laddr = "tcp://0.0.0.0:26656"
+#### string 392: prometheus_listen_addr = ":26660"
+#### app.toml
+#### string 165: address = "0.0.0.0:9090"
+#### string 178: address = "0.0.0.0:9091"
+#### client.toml
+#### string 15: node = "tcp://localhost:26657"
 
-### or u can do this 
+#### or u can do this 
 ```
 sed -i.bak -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:60858\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:60857\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:6067\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:60856\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":60860\"%" $HOME/.ollo/config/config.toml
 ```
